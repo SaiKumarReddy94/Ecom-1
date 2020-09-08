@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store</title>
-</head>
-<body>
-  {% load static %}
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+{% extends 'store/main.html' %}
+{% load static %}
+  {% block content %}
+  <h2>Store</h2>
   <img src="{% static 'images/cart.png' %}" alt="cart_logo">
-  <h5>store</h5>
-</body>
-</html>
+
+  {% endblock content %}
