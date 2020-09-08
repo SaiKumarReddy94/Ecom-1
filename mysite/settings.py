@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 # print(BASE_DIR)
 # print(STATIC_URL,"static_URL")
 # print(STATIC_ROOT,"STATIC_ROOT")
-print(STATICFILES_DIRS,"DIRS")
+# print(STATICFILES_DIRS,"DIRS")
 
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
