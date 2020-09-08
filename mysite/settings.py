@@ -120,8 +120,12 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+# print(BASE_DIR)
+# print(STATIC_URL,"static_URL")
+# print(STATIC_ROOT,"STATIC_ROOT")
+print(STATICFILES_DIRS,"DIRS")
 
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
