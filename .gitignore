@@ -1,0 +1,5 @@
+#ignore to commit 001_initial.py
+ecom/migrations/0001_initial.py
+#ignore to commit all in migrations folder except __init__.py
+ecom/migrations/*
+!ecom/migrations/__init__.py
