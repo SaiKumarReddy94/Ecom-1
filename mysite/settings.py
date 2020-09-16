@@ -127,6 +127,7 @@ STATIC_URL = '/static/'
 # print(STATIC_URL,"static_URL")
 # print(STATIC_ROOT,"STATIC_ROOT")
 # print(STATICFILES_DIRS,"DIRS")
-
+MEDIA_URL = '/images/'
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'static/images')
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
