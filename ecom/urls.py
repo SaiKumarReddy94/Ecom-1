@@ -24,4 +24,7 @@ urlpatterns = [
     path('cart/',views.cart,name="cart"),
     path('checkout/',views.checkout,name="checkout"),
     path('update_item/',views.updateItem,name="update_item"),
+    # path('signup/', views.SignUpView.as_view(),name="signup"),
+    # path('login/', views.LoginView.as_view(),name="login"),
+    # path('logout/', views.LogoutView.as_view(),name="logout")
 ]
