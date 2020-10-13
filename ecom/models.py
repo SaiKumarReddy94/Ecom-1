@@ -16,16 +16,17 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
     digital = models.BooleanField(default=True, null=True, blank=True)
-    image=models.ImageField(blank=True,null=True)
+    image = models.ImageField(blank=True, null=True)
 
     def __str__(self) -> str:
         return self.name
+
     @property
     def imageurl(self):
         try:
-            url=self.image.url
+            url = self.image.url
         except:
-            url=""
+            url = ""
         return url
 
 
@@ -38,23 +39,26 @@ class Order(models.Model):
 
     def __str__(self) -> str:
         return self.transaction_id
+
     @property
     def get_cart_total(self):
-        orderitems=self.orderitem_set.all()
-        total=sum([item.get_total for item in orderitems])
+        orderitems = self.orderitem_set.all()
+        total = sum([item.get_total for item in orderitems])
         return total
+
     @property
     def get_cart_items(self):
-        orderitems=self.orderitem_set.all()
-        total=sum([item.quantity for item in orderitems])
+        orderitems = self.orderitem_set.all()
+        total = sum([item.quantity for item in orderitems])
         return total
+
     @property
     def shipping(self):
-        shipping=False
-        orderitems=self.orderitem_set.all()
+        shipping = False
+        orderitems = self.orderitem_set.all()
         for orderitem in orderitems:
-            if orderitem.product.digital==False:
-                shipping=True
+            if orderitem.product.digital == False:
+                shipping = True
         return shipping
 
 
@@ -66,9 +70,12 @@ class OrderItem(models.Model):
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self) -> str:
+        return self.product.__str__()
+
     @property
     def get_total(self):
-        total=self.product.price*self.quantity
+        total = self.product.price*self.quantity
         return total
 
 
@@ -80,4 +87,7 @@ class ShipmentAddress(models.Model):
     address = models.CharField(max_length=200, null=True)
     city = models.CharField(max_length=200, null=True)
     state = models.CharField(max_length=200, null=True)
-    Pincode = models.CharField(max_length=200, null=True)
+    pincode = models.CharField(max_length=200, null=True)
+
+    def __str__(self) -> str:
+        return str(self.address)
